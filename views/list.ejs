@@ -1,0 +1,34 @@
+
+  <%- include('header'); -%>
+
+  
+  <div class="box" id='heading'>
+
+
+    <h1> <%= listTitle %> </h1>
+  </div>
+  <div class="box">
+    <!-- THe for loop is to render as a list the data from the newItem
+      . This for loop, loop the length af thr whole newListItems array -->
+    <!--  newListItems  is to render the data from the input entered in the
+    form below -->
+    <% for (var i = 0; i<= newListItems.length; i++){ %>
+    <div class="item">
+      <input type="checkbox">
+      <p><%= newListItems[i] %></p>
+    </div>
+
+    <% } %>
+    <form class="" action="/" method="post">
+      <!-- data input text, neame of the request "newItem",. placeholder texte
+      in the input case and autocomplite 'off'  this avoid to display the previous
+    date entered in the input case  -->
+      <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+      <button type="submit" name="list" value=<%= listTitle %>>+</button>
+    </form>
+
+  </div>
+
+
+  <!-- post resquest and the action is send to the route ('/') (action="/") -->
+  <%- include('footer'); -%>
